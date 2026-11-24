@@ -26,7 +26,7 @@ along with Goblin Camp. If not, see <http://www.gnu.org/licenses/>.*/
 #include <sstream>
 
 #define GC_SKIP_RC
-#include "goblin-camp.rch"
+#include "goblincamp.rch"
 
 #include "Logger.hpp"
 

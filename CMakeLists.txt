@@ -1,7 +1,7 @@
 # CMakeLists.txt for goblincamp
 # TODO: blame
 
-cmake_minimum_required (VERSION 2.6)
+cmake_minimum_required (VERSION 3.12)
 
 # TODO: configure depending on OS
 set (CMAKE_INSTALL_PREFIX "./pkg/usr")
@@ -9,6 +9,10 @@ set (CMAKE_INSTALL_PREFIX "./pkg/usr")
 project (GOBLINCAMP)
 set (GOBLINCAMP_VERSION_MAJOR 0)
 set (GOBLINCAMP_VERSION_MINOR 22)
+
+# The game and its bundled Python extension modules require Python 2.7.
+find_package (Python2 2.7 REQUIRED COMPONENTS Development)
+find_package (ZLIB REQUIRED)
 
 # TODO: configure version here, use in source
 configure_file (

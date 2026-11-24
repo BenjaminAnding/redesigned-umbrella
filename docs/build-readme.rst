@@ -218,6 +218,23 @@ Available features:
 Using the build system
 ----------------------
 
+~~~~~~~~~~~~~~~~~~~~~
+Building on Windows
+~~~~~~~~~~~~~~~~~~~~~
+
+The Windows build uses MSVC through NMake and CMake. Install CMake and Visual Studio
+with the C++ desktop workload, then run ``build_windows.bat`` from an x64 Visual Studio
+Developer Command Prompt. The script accepts an optional dependency prefix directory:
+
+.. code-block:: bat
+
+   build_windows.bat C:\dev\goblin-camp-deps
+
+The dependency prefix must contain compatible development headers and libraries for
+Python 2.7, Boost (including Boost.Python), SDL 1.2, SDL_image 1.2, libtcod, libpng,
+and zlib. When invoking NMake directly, use ``nmake /f Makefile.win``. Set
+``CONFIG=Debug`` for a debug build; the default is ``Release``.
+
 To trigger the build, run ``bjam`` with appropriate parameters:
 
 * ``--user-config=file`` — specifies user config to use. See `Configuring the build — configuration file and features`_

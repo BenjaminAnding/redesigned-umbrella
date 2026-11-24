@@ -1,0 +1,17 @@
+!IFNDEF CONFIG
+CONFIG=Release
+!ENDIF
+!IFNDEF GC_DEPS_ROOT
+GC_DEPS_ROOT=
+!ENDIF
+
+BUILD_DIR=build-windows
+
+all: configure
+	cmake --build "$(BUILD_DIR)" --config $(CONFIG)
+
+configure:
+	cmake -S . -B "$(BUILD_DIR)" -G "NMake Makefiles" -DCMAKE_BUILD_TYPE=$(CONFIG) -DCMAKE_PREFIX_PATH="$(GC_DEPS_ROOT)"
+
+clean:
+	cmake -E remove_directory "$(BUILD_DIR)"
